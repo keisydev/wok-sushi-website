@@ -1,0 +1,97 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 80vh; 
+  overflow: hidden; /* Esconde imagens que não estão no slide atual */
+  box-shadow: var(--box-shadow-medium);
+}
+
+.carouselInner {
+  display: flex; 
+  height: 100%;
+  transition: transform 0.7s ease-in-out; /* Transição suave entre slides */
+}
+
+.carouselItem {
+  flex: 0 0 100%; /* Cada item ocupa 100% da largura do carrossel */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+}
+
+.carouselControlPrev,
+.carouselControlNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--color-light);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  border-radius: var(--spacing-xs);
+}
+
+.carouselControlPrev {
+  left: var(--spacing-md);
+}
+
+.carouselControlNext {
+  right: var(--spacing-md);
+}
+
+.carouselControlPrev:hover,
+.carouselControlNext:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carouselIndicators {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-xs);
+  z-index: 10;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.indicator.active {
+  background-color: var(--color-primary-medium); /* Cor de destaque para o indicador ativo */
+  transform: scale(1.2);
+}
+
+/* Responsividade para o Carrossel */
+@media (max-width: 768px) {
+  .carousel {
+    height: 60vh; /* Altura menor no mobile */
+  }
+  .carouselControlPrev,
+  .carouselControlNext {
+    font-size: 1.5rem;
+    padding: var(--spacing-xs);
+  }
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+}

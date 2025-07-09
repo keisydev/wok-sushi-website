@@ -1,0 +1,23 @@
+/* Estilo base para botões */
+.baseButton {
+  background-color: var(--color-secondary-dark); /* Uma cor padrão para botões de ação */
+  color: var(--color-text-light);
+  font-family: var(--font-family-body);
+  font-size: 1.1rem; /* Tamanho de fonte padrão */
+  padding: var(--spacing-sm) var(--spacing-lg); /* Padding padrão */
+  margin: 10px;
+  border: none;
+  border-radius: var(--spacing-xs);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none; /* Para links que parecem botões */
+  display: inline-block; /* Para que o padding e margem funcionem bem */
+  text-align: center; /* Centraliza o texto no botão */
+  
+}
+
+.baseButton:hover {
+  background-color: var(--color-tertiary-darker); /* Cor no hover */
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: var(--box-shadow-light); /* Sombra no hover */
+}

@@ -1,0 +1,179 @@
+.especialidadesPage {
+  background-color: var(--color-light);
+  color: var(--color-text-dark);
+  padding-bottom: var(--spacing-xl);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+}
+
+.pageHeading {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  color: var(--color-tertiary-darker);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.pageDescription {
+  font-family: var(--font-family-body);
+  font-size: 1.1rem;
+  color: var(--color-secondary-dark);
+  margin-bottom: var(--spacing-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.specialtiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grade responsiva */
+  gap: var(--spacing-xl); /* Espaçamento entre os cards */
+  margin-top: var(--spacing-xl);
+}
+
+.specialtyCard {
+  background-color: #fff;
+  border-radius: var(--spacing-xs);
+  box-shadow: var(--box-shadow-light);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza conteúdo no card */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.specialtyCard:hover {
+  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: var(--box-shadow-medium);
+}
+
+.itemImage {
+  max-width: 100%;
+  height: 280px; /* Altura fixa para consistência das imagens  */
+  object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+  border-radius: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+  cursor: pointer; 
+  transition: transform 0.2s ease;
+}
+
+.itemImage:hover {
+  transform: scale(1.02); /* Pequeno zoom ao passar o mouse */
+}
+
+.itemDetails {
+  width: 100%;
+  padding-top: var(--spacing-sm);
+}
+
+.itemName {
+  font-family: var(--font-family-heading);
+  font-size: 1.7rem;
+  color: var(--color-tertiary-darker);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+.itemDescription {
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+  max-height: auto;
+  overflow: hidden;
+  white-space: normal; /* Permite quebras de linha */
+  
+}
+
+/* --- Modal Styles  --- */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: var(--spacing-md);
+  border-radius: var(--spacing-xs);
+  box-shadow: var(--box-shadow-medium);
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeModalButton {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-tertiary-darker);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  transition: transform 0.2s ease;
+}
+
+.closeModalButton:hover {
+  transform: scale(1.1);
+  color: var(--color-secondary-dark);
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 80vh;
+  height: auto;
+  display: block;
+  border-radius: var(--spacing-xs);
+}
+
+/* --- Responsividade da Especialidades Page --- */
+@media (max-width: 1024px) {
+  .pageHeading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageHeading {
+    font-size: 2rem;
+  }
+  .pageDescription {
+    font-size: 1rem;
+  }
+  .specialtiesGrid {
+    grid-template-columns: 1fr; /* Uma coluna no mobile */
+  }
+  .itemImage {
+    height: 220px; /* Altura menor para mobile */
+  }
+  .itemName {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageHeading {
+    font-size: 1.8rem;
+  }
+  .specialtyCard {
+    padding: var(--spacing-sm);
+  }
+}

@@ -1,0 +1,48 @@
+.scrollToTop {
+  position: fixed; /* Fixa o botão na tela */
+  bottom: var(--spacing-xl); /* Posição na parte inferior */
+  right: var(--spacing-xl); /* Posição na parte direita */
+  z-index: 1000; /* Garante que fique acima da maioria dos conteúdos */
+  opacity: 0; /* Começa invisível */
+  visibility: hidden; /* Esconde completamente do layout quando invisível */
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+.scrollToTop.show {
+  opacity: 1; /* Torna visível */
+  visibility: visible;
+}
+
+.scrollToTop button {
+  background-color: var(--color-secondary-dark); 
+  color: var(--color-light); 
+  border: none;
+  border-radius: 50%; 
+  width: 50px; 
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-medium); 
+  font-size: 1.5rem; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.scrollToTop button:hover {
+  background-color: var(--color-tertiary-darker);
+  transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+/* Responsividade para o botão */
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: var(--spacing-lg); /* Posição um pouco mais para cima no mobile */
+    right: var(--spacing-lg);
+  }
+  .scrollToTop button {
+    width: 45px; /* Tamanho menor no mobile */
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}

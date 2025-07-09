@@ -1,0 +1,247 @@
+.reservasPage {
+  background-color: var(--color-light);
+  color: var(--color-text-dark);
+  padding-bottom: var(--spacing-xl);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.pageHeading {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  color: var(--color-tertiary-darker);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.pageDescription {
+  font-family: var(--font-family-body);
+  font-size: 1.1rem;
+  color: var(--color-secondary-dark);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reservationContent {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar em colunas no mobile */
+  gap: var(--spacing-xl);
+  justify-content: center; /* Centraliza as colunas */
+  align-items: flex-start; /* Alinha o topo das colunas */
+}
+
+.formContainer {
+  flex: 2; /* Formulário ocupa mais espaço */
+  min-width: 350px; /* Largura mínima para o formulário */
+  background-color: #fff;
+  padding: var(--spacing-xl);
+  border-radius: var(--spacing-xs);
+  box-shadow: var(--box-shadow-light);
+}
+
+.formHeading {
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  color: var(--color-tertiary-darker);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.reservationForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md); /* Espaçamento entre grupos de formulário */
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-sm);
+}
+
+.label {
+  display: block; /* Ocupa a própria linha */
+  font-family: var(--font-family-body);
+  font-size: 0.95rem;
+  color: var(--color-secondary-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-primary-medium);
+  border-radius: var(--spacing-xs);
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  background-color: var(--color-light);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary-dark);
+  box-shadow: 0 0 0 2px rgba(var(--color-secondary-dark), 0.2);
+}
+
+.inputError {
+  border-color: #e74c3c; /* Cor de erro */
+}
+
+.button{
+  text-align: center;
+}
+
+.errorText {
+  color: #e74c3c; /* Cor de texto do erro */
+  font-size: 0.85rem;
+  margin-top: var(--spacing-xs);
+  display: block;
+}
+
+.formRow {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.formRow .formGroup {
+  flex: 1; /* Distribui o espaço igualmente */
+  margin-bottom: 0; /* Ajusta margem para não ter espaçamento extra */
+}
+
+.submitMessage {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: var(--spacing-sm);
+    border-radius: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.successMessage {
+    background-color: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb;
+}
+
+.errorMessage {
+    background-color: #f8d7da; 
+    color: #721c24; 
+    border: 1px solid #f5c6cb;
+}
+
+
+.contactInfoContainer {
+  flex: 1; /* Ocupa menos espaço que o formulário */
+  min-width: 300px;
+  background-color: #fff;
+  padding: var(--spacing-xl);
+  border-radius: var(--spacing-xs);
+  box-shadow: var(--box-shadow-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.contactHeading {
+  font-family: var(--font-family-heading);
+  font-size: 1.8rem;
+  color: var(--color-tertiary-darker);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.contactDetails p {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.5;
+}
+
+.contactDetails strong {
+  color: var(--color-secondary-dark);
+}
+
+.contactDetails ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.contactDetails li {
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.mapPlaceholder {
+  margin-top: var(--spacing-xl);
+  background-color: var(--color-primary-light);
+  padding: var(--spacing-md);
+  border-radius: var(--spacing-xs);
+  text-align: center;
+  flex-grow: 1; /* Para que o mapa ocupe o espaço restante */
+}
+
+.mapPlaceholder iframe {
+    border-radius: var(--spacing-xs);
+    box-shadow: var(--box-shadow-light);
+}
+
+/* --- Responsividade da Reservas Page --- */
+@media (max-width: 1024px) {
+  .pageHeading {
+    font-size: 2.5rem;
+  }
+  .formHeading, .contactHeading {
+    font-size: 1.8rem;
+  }
+  .formRow {
+    flex-direction: column; /* Quebra as colunas do formulário em uma única coluna */
+  }
+  .formRow .formGroup {
+    flex: unset; /* Remove flex para não forçar largura */
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageHeading {
+    font-size: 2rem;
+  }
+  .pageDescription {
+    font-size: 1rem;
+  }
+  .reservationContent {
+    flex-direction: column; /* Coloca formulário e contato em coluna */
+    align-items: center;
+  }
+  .formContainer, .contactInfoContainer {
+    min-width: unset; /* Remove largura mínima */
+    width: 100%;
+    padding: var(--spacing-lg);
+  }
+  .formHeading, .contactHeading {
+    font-size: 1.5rem;
+  }
+  .submitButton {
+    width: 100%; /* Botão ocupa largura total no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .pageHeading {
+    font-size: 1.8rem;
+  }
+  .formContainer, .contactInfoContainer {
+    padding: var(--spacing-md);
+  }
+  .formHeading, .contactHeading {
+    font-size: 1.3rem;
+  }
+}

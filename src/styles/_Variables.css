@@ -1,0 +1,57 @@
+:root {
+  /* Paleta de Cores do Wok Sushi */
+  --color-primary-light: #f6d9cc; /* Cor mais clara para fundos ou detalhes */
+  --color-primary-medium: #CFB2A5; /* Cor base, suave e convidativa */
+  --color-secondary-dark: #9C715D; /* Cor secundária, mais intensa */
+  --color-tertiary-darker: #614d44; /* Cor mais escura, para texto ou elementos de contraste */
+
+  /* Cores de Texto Sugeridas */
+  --color-text-dark: #333333;   /* Texto principal escuro para fundos claros */
+  --color-text-light: #f9f9f9;  /* Texto claro para fundos escuros */
+
+  /* Fontes */
+  --font-family-heading: 'Playfair Display', serif;  
+  --font-family-body: 'Roboto', sans-serif; 
+  
+  /* Tamanhos de Fonte Base  */
+  --font-size-base: 16px; 
+
+  /* Espaçamentos */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+
+  /* Sombras */
+  --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset básico de estilos para consistência entre navegadores */
+html {
+  box-sizing: border-box;
+  font-size: var(--font-size-base); /* Define o tamanho base para rem */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-body);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Suavização de fontes */
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Links herdam a cor do texto padrão */
+}
+
+/* Adicionar fontes do Google Fonts - precisará ser importado no HTML ou CSS */
+/* Exemplo: <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> */

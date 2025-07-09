@@ -1,0 +1,102 @@
+.legalPage {
+  background-color: var(--color-light);
+  color: var(--color-text-dark);
+  padding-bottom: var(--spacing-xl);
+  line-height: 1.7; /* Melhorar legibilidade de texto longo */
+}
+
+.container {
+  max-width: 900px; /* Um pouco mais estreito para blocos de texto longo */
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.pageHeading {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  color: var(--color-tertiary-darker);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.lastUpdated {
+    font-size: 0.9rem;
+    color: var(--color-secondary-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-style: italic;
+}
+
+.legalSection {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-md);
+  background-color: #fff;
+  border-radius: var(--spacing-xs);
+  box-shadow: var(--box-shadow-light);
+}
+
+.sectionTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.8rem;
+  color: var(--color-tertiary-darker);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-primary-medium);
+  padding-bottom: var(--spacing-xs);
+}
+
+.legalSection p {
+  margin-bottom: var(--spacing-md);
+  font-size: 1rem;
+}
+
+.legalSection ul {
+  list-style: disc; /* Marcadores de lista padrão */
+  margin-left: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.legalSection li {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+strong {
+    color: var(--color-secondary-dark);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .pageHeading {
+    font-size: 2.5rem;
+  }
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageHeading {
+    font-size: 2rem;
+  }
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+  .legalSection {
+    padding: var(--spacing-sm);
+  }
+  .legalSection ul {
+    margin-left: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .pageHeading {
+    font-size: 1.8rem;
+  }
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+  .legalSection p, .legalSection li {
+    font-size: 0.9rem;
+  }
+}

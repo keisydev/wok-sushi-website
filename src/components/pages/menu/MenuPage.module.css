@@ -1,0 +1,237 @@
+/* src/pages/Menu/Menu.module.css */
+
+.menuPage {
+  background-color: var(--color-light);
+  color: var(--color-text-dark);
+  padding-bottom: var(--spacing-xl); /* Espaçamento no final da página */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.pageHeading {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  color: var(--color-tertiary-darker);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.pageDescription {
+  font-family: var(--font-family-body);
+  font-size: 1.1rem;
+  color: var(--color-secondary-dark);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categoryNavigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.categoryButton {
+  background-color: var(--color-primary-medium);
+  color: var(--color-text-light);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--spacing-xs);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.categoryButton:hover {
+  background-color: var(--color-secondary-dark);
+  transform: translateY(-2px);
+}
+
+.menuCategory {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+
+}
+
+.categoryTitle {
+  font-family: var(--font-family-heading);
+  font-size: 2.2rem;
+  color: var(--color-tertiary-darker);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--color-secondary-dark);
+  padding-bottom: var(--spacing-xs);
+  display: inline-block; /* Para o underline seguir o texto */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo em grid */
+  gap: var(--spacing-xl);
+}
+
+.menuItem {
+  background-color: #fff;
+  border-radius: var(--spacing-xs);
+  box-shadow: var(--box-shadow-light);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza conteúdo dentro do item */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menuItem:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-medium);
+}
+
+.itemImage {
+  max-width: 100%;
+  height: 250px; /* Altura fixa para consistência das imagens */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  border-radius: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+  cursor: pointer; /* Indica que a imagem é clicável */
+  transition: transform 0.2s ease;
+}
+
+.itemImage:hover {
+    transform: scale(1.02); /* Pequeno zoom ao passar o mouse */
+}
+
+.itemDetails {
+  width: 100%; /* Garante que os detalhes ocupem a largura total */
+}
+
+.itemName {
+  font-family: var(--font-family-heading);
+  font-size: 1.7rem;
+  color: var(--color-tertiary-darker);
+  margin-bottom: var(--spacing-sm);
+}
+
+.itemDescription {
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  line-height: auto;
+  max-height: auto;
+}
+
+.itemPrice {
+  font-family: var(--font-family-body);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-secondary-dark);
+}
+
+/* --- Modal Styles --- */
+.modalOverlay {
+  position: fixed; /* Fixa o overlay na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Garante que fique acima de tudo */
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: var(--spacing-md);
+  border-radius: var(--spacing-xs);
+  box-shadow: var(--box-shadow-medium);
+  position: relative;
+  max-width: 90%; /* Largura máxima do conteúdo do modal */
+  max-height: 90%; /* Altura máxima para não ultrapassar a tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza a imagem */
+  align-items: center;
+}
+
+.closeModalButton {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-tertiary-darker);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  transition: transform 0.2s ease;
+}
+
+.closeModalButton:hover {
+  transform: scale(1.1);
+  color: var(--color-secondary-dark);
+}
+
+.modalImage {
+  max-width: 100%; /* Garante que a imagem não saia do modal */
+  max-height: 80vh; /* Altura máxima da imagem para não ser cortada */
+  height: auto; /* Mantém a proporção */
+  display: block; /* Remove espaçamentos extras */
+  border-radius: var(--spacing-xs);
+}
+
+/* --- Responsividade da Menu Page --- */
+@media (max-width: 1024px) {
+  .pageHeading {
+    font-size: 2.5rem;
+  }
+  .categoryTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageHeading {
+    font-size: 2rem;
+  }
+  .pageDescription {
+    font-size: 1rem;
+  }
+  .categoryTitle {
+    font-size: 1.8rem;
+  }
+  .menuGrid {
+    grid-template-columns: 1fr; /* Uma coluna no mobile */
+  }
+  .itemImage {
+    height: 200px; /* Altura menor para mobile */
+  }
+  .itemName {
+    font-size: 1.5rem;
+  }
+  .itemPrice {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageHeading {
+    font-size: 1.8rem;
+  }
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+  .menuItem {
+    padding: var(--spacing-sm);
+  }
+}
